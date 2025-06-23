@@ -1,1 +1,1 @@
-from Person import Person
+from cadastro.models.Person import Person
