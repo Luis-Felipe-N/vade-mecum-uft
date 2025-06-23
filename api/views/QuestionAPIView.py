@@ -3,8 +3,8 @@ from questions.models import Question
 from api.serializers import QuestionSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-class QuestionViewSet(APIView):
-    queryset = Question.objects.all().order_by('-data_criacao')
+class QuestionAPIView(APIView):
+    queryset = Question.objects.all().order_by('-created_at')
     serializer_class = QuestionSerializer
     permission_classes = [IsAuthenticatedOrReadOnly] 
 

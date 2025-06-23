@@ -2,7 +2,7 @@ from django.db import models
 
 #################################
 from questions.models import Question
-
+from cadastro.models import Person
 
 class Answer(models.Model):
     question = models.ForeignKey(
@@ -13,7 +13,7 @@ class Answer(models.Model):
     )
     content = models.TextField(verbose_name="Conteúdo da Resposta")
     author = models.ForeignKey(
-        User,
+        Person,
         on_delete=models.CASCADE,
         related_name='answers_provided',
         verbose_name="Autor"

@@ -18,8 +18,7 @@ class Question(models.Model):
         related_name='questions_asked',
         verbose_name="Autor"
     )
-    subject = models.ForeignKey(
-        Subject,
+    subject = models.ForeignKey(Subject,
         on_delete=models.SET_NULL, 
         null=True,
         blank=True,

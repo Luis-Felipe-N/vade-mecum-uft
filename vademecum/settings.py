@@ -27,9 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +36,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+OTHERS_APPS = []
+
+MY_APPS = [
+    'questions',
+    'cadastro',
+    # 'core',
+    'api'
+]
+
+INSTALLED_APPS = INSTALLED_APPS + OTHERS_APPS + MY_APPS
+ 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

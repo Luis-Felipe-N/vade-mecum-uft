@@ -1,8 +1,11 @@
 # questions/models.py
 
 from django.db import models
-from django.contrib.auth import get_user_model
 from django.utils import timezone
+from django.contrib.auth import get_user_model
+#################################
+from questions.models import Subject
+
 
 User = get_user_model()
 
@@ -51,7 +54,7 @@ class Person(models.Model):
     )
 
     enrolled_subjects = models.ManyToManyField(
-        'Subject', 
+        Subject, 
         blank=True,
         related_name='students_enrolled',
         verbose_name="Disciplinas Cursadas"
