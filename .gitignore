@@ -1,0 +1,34 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+.venv/
+env/
+.env/
+.Python
+*.egg-info/
+*.egg
+
+# Django
+*.log
+*.pot
+*.mo
+db.sqlite3 # Seu banco de dados SQLite local
+media/ # Onde seus uploads de usuários serão salvos
+static_root/ # Onde os arquivos estáticos são coletados para produção
+
+# Vscode
+.vscode/
+
+# IDEs
+.idea/ # PyCharm
+*.iml
+
+# Operating System Files
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+.directory # Linux
+
+# Environment variables file
+.env # Se você usar um arquivo .env para variáveis de ambiente
