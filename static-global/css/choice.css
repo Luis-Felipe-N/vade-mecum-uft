@@ -1,0 +1,28 @@
+.choices {
+    max-width: 100%;
+    width: 100%;
+}
+
+.choices__inner {
+    background-color: #fff;
+    min-height: 47.25px;
+    ;
+    border-radius: .25rem;
+    border: 1px solid #dce7f1;
+    display: flex;
+    align-items: center;
+}
+
+.choices__inner input {
+    background-color: #fff;
+}
+
+.choices.is-open.is-focused .choices__inner {
+    border: .5px solid #86B7FE;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+    border: 1px solid #86B7FE;
+}

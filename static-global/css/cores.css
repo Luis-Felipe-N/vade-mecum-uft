@@ -1,0 +1,116 @@
+/* Caso queira alterar as cores, use este como referencia: https://chakra-ui.com/docs/styled-system/theme */
+
+:root {
+    --cor-secundaria-600: #C53030;
+    --cor-secundaria-500: #E53E3E;
+    --cor-secundaria-400: #F56565;
+    --cor-secundaria-300: #FC8181;
+    --cor-secundaria-200: #FEB2B2;
+
+    --cor-principal-50: #FFFAF0;
+    --cor-principal-100: #FEEBC8;
+    --cor-principal-200: #FBD38D;
+    --cor-principal-300: #F6AD55;
+    --cor-principal-400: #ED8936;
+    --cor-principal-500: #004A80;
+    --cor-principal-600: #004A80;
+    --cor-principal-700: #9C4221;
+    --cor-principal-800: #7B341E;
+    --cor-principal-900: #652B19;
+
+    --cor-azul-50: #ebf8ff;
+    --cor-azul-100: #bee3f8;
+    --cor-azul-200: #90cdf4;
+    --cor-azul-300: #63b3ed;
+    --cor-azul-400: #4299e1;
+    --cor-azul-500: #3182ce;
+    --cor-azul-600: #2b6cb0;
+    --cor-azul-700: #2c5282;
+    --cor-azul-800: #2a4365;
+    --cor-azul-900: #1A365D;
+}
+
+/* Alterando cores dos elementos */
+
+.btn-primary,
+.bg-primary {
+    background: var(--cor-principal-500) !important;
+    border-color: var(--cor-principal-400);
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: var(--cor-principal-600);
+    border-color: var(--cor-principal-400);
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background: var(--cor-principal-300) !important;
+    border-color: var(--cor-principal-400);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-primary,
+.sidebar-link,
+.sidebar-title {
+    color: var(--cor-principal-600) !important;
+}
+
+.sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
+    background-color: var(--cor-principal-600);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--cor-secundaria-400);
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--cor-principal-400) !important;
+}
+
+.nav-tabs .nav-link.active::after {
+    background-color: var(--cor-secundaria-400);
+    box-shadow: var(--cor-secundaria-200) !important;
+}
+
+input {
+    accent-color: var(--cor-secundaria-400);
+}
+
+/* CONSTRASTE */
+
+.contraste *:not(i, hr, .progress, .progress-bar, .modal),
+.contraste .bg-primary,
+.contraste .bg-white {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.contraste .card,
+.contraste .modal-dialog,
+.contraste .bg-primary,
+.contraste .submenu-group-wrapper .contraste,
+.dropdown-menu {
+    /* border: 1px solid #fff !important; */
+    outline: 1px solid #fff !important;
+}
+
+.text-base {
+    color: #4A5565 !important;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.swal2-succes> {
+    border-color: #198754 !important;
+    color: #198754 !important;
+}

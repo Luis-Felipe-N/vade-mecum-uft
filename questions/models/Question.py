@@ -48,7 +48,7 @@ class Question(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"Pergunta: {self.title} por {self.author.username}"
+        return f"Pergunta: {self.title} por {self.author.full_name}"
 
     def update_status(self):
         if self.answers.exists():

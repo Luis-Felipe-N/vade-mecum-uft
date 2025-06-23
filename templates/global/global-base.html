@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<div id="main" class="content layout-horizontal" style="min-height: calc(100vh - 5.8rem);">
+    {% include 'global/includes/header.html' %}
+
+    <div class="content-wrapper">
+        {% block page_content %}{% endblock page_content %}
+    </div>
+</div>
+
+{% include 'global/includes/footer.html' %}
+
+{% endblock content %}

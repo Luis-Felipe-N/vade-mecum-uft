@@ -1,0 +1,30 @@
+{% load static %}
+
+{% block static_app %}
+<link rel="stylesheet" href="{% static 'avneidashbord/css/footer.css' %}">
+{% endblock static_app %}
+
+<footer class="bg-white sticky-footer">
+    <div class="container footer d-flex py-4 gap-5 align-items-center justify-content-between ">
+
+      <img src="{% static 'img/logos/logo.svg' %}" alt="" width="40px">
+      
+
+      <div class="text-center">
+        <p>Copyright © 2022 Vade Mecum UFT </p>
+        <!-- <p> Programa  de Institucionalização e Gestão de Sistemas Municipais de Ensino/Educação"</p> -->
+      </div>
+      <div>
+        <strong>Redes</strong>
+        <ul class="list-unstyled d-flex gap-3">
+          <li>
+            <a class="d-flex fs-6 align-items-center gap-1" href=""><i class="fs-5 fa-brands fa-facebook"></i>Facebook</a>
+          </li>
+          <li>
+            
+            <a class="d-flex fs-6 align-items-center gap-2" href=""><i class="fs-5 fa-brands fa-instagram"></i>Instagram</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</footer>

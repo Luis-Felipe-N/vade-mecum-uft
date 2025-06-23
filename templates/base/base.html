@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS FILES -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/iconly/bold.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'libs/choice/choice.css' %}">
+
+    {% block static_css_app %}{% endblock static_css_app %}
+    {% block static_js_geral %}{% endblock %}
+
+    <!-- CORES -->
+    <link rel="stylesheet" href="{% static 'css/cores.css' %}">
+</head>
+<title>{% block title %}Página Inicial{% endblock title %} :: UFT VADE MECUM</title>
+</head>
+
+<body>
+    <div id="app">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <script src="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/apexcharts/apexcharts.js' %}"></script>
+    <script src="{% static 'assets/js/mazer.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="{% static 'libs/choice/choice.js' %}"></script>
+
+    {% if True %} <!-- VERFICAR SE TEM PERMISSÃO PARA TORNASE OUTRA PESSOA -->
+    <script src="{% static 'participantes/js/tornase.js' %}"></script>
+    {% endif %}
+
+    <script src="{% static 'js/index.js' %}"></script>
+
+    <script "type=text/javascript" src="{% static " js/qrcode.min.js" %}"></script>
+    <script src="{% static 'assets/vendors/filepond/index.js' %}"></script>
+
+    {% block static_js_app %}{% endblock static_js_app %}
+</body>
+
+</html>
