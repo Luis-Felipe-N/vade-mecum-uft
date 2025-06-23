@@ -1,4 +1,7 @@
 from django.db import models
+############################
+from cadastro.models import Person
+from questions.models import Subject
 
 STATUS_CHOICES = [
         ('open', 'Aberta'),
@@ -10,7 +13,7 @@ class Question(models.Model):
     title = models.CharField(max_length=255, verbose_name="Título da Pergunta")
     content = models.TextField(verbose_name="Conteúdo da Pergunta", help_text="Detalhe sua dúvida ou o que você procura.")
     author = models.ForeignKey(
-        User,
+        Person,
         on_delete=models.CASCADE,
         related_name='questions_asked',
         verbose_name="Autor"
