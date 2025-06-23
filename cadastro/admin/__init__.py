@@ -1,0 +1,1 @@
+from cadastro.admin.PersonAdmin import PersonAdmin
