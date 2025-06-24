@@ -1,5 +1,7 @@
 # 📚 Vade Mecum UFT
 
+![COver site vade mecum uft](static-global/img/cover.png)
+
 ## Sobre o Projeto
 O Vade Mecum UFT é uma plataforma colaborativa desenvolvida para estudantes da Universidade Federal do Tocantins (UFT). Nosso objetivo é facilitar o compartilhamento de perguntas e respostas, provas anteriores, cópias de trabalhos e materiais de estudo relevantes para as diversas disciplinas e cursos da universidade.
 
