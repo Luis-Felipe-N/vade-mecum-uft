@@ -1,0 +1,19 @@
+<div class="d-flex align-items-center gap-3">
+    <div class="avatar avatar-md2">
+        {% if person.profile_picture %}
+            <img style="object-fit: cover;" src="{{person.profile_picture.url}}" alt="Avatar">
+            {% else %}
+            <img src="https://mundoavatar.com.br/wp-content/uploads/2021/07/avatar-filme.jpeg" alt="Avatar"  style="object-fit: cover;">
+        {% endif %}
+    </div>
+    <div class="text">
+        <h6 class="user-dropdown-name {{color}}">{{person.full_name}}</h6>
+        <div class="user-dropdown-status text-sm text-muted d-flex gap-2 align-items-center">
+            {% for subject in person.enrolled_subjects.all %}
+                <a href="#" class="text-muted text-sm hover-link">
+                    <small>{{subject}}</small>
+                </a>{% if forloop.counter != person.enrolled_subjects.all|length %}<i class="fa-solid fa-circle" style="font-size: .2rem;"></i>{% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -3,7 +3,7 @@
     <div class="header-top">
         <div class="container">
             <div class="logo">
-                <a class="d-flex align-items-center gap-3" href="index.html"><img src="{% static 'img/logos/logo.svg' %}" alt="" width="40px"> <strong>Vade Mecum</strong></a>
+                <a class="d-flex align-items-center gap-3 text-primary" href="{% url "indexSistema" %}"><img src="{% static 'img/logos/logo.svg' %}" alt="" width="40px"> <strong>Vade Mecum</strong></a>
             </div>
             <div class="header-top-right">
                 {% if request.user.is_authenticated %}
@@ -13,7 +13,7 @@
                                 <img style="object-fit: cover;" src="{{request.user.person_profile.profile_picture.url}}" alt="Avatar">
                             </div>
                             <div class="text">
-                                <h6 class="user-dropdown-name">Luis Felipe</h6>
+                                <h6 class="user-dropdown-name">{{request.user.person_profile.full_name}}</h6>
                                 <p class="user-dropdown-status text-sm text-muted">{{request.user.person_profile.students_enrolled}}</p>
                             </div>
                         </a>

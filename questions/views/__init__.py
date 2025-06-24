@@ -1,1 +1,2 @@
 from questions.views.QuestionsListView import QuestionsListView
+from questions.views.QuestionsDetailView import QuestionsDetailView

@@ -2924,7 +2924,7 @@ textarea.form-control-lg {
 }
 
 .valid-tooltip {
-    background-color: rgba(25, 135, 84, .9);
+    background-color: rgba(0, 133, 119, .9);
     border-radius: .25rem;
     color: #fff;
     display: none;
@@ -2957,7 +2957,7 @@ textarea.form-control-lg {
 .form-control.is-valid:focus,
 .was-validated .form-control:valid:focus {
     border-color: #198754;
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .25)
 }
 
 .was-validated textarea.form-control:valid,
@@ -2984,7 +2984,7 @@ textarea.form-control.is-valid {
 .form-select.is-valid:focus,
 .was-validated .form-select:valid:focus {
     border-color: #198754;
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .25)
 }
 
 .form-check-input.is-valid,
@@ -2999,7 +2999,7 @@ textarea.form-control.is-valid {
 
 .form-check-input.is-valid:focus,
 .was-validated .form-check-input:valid:focus {
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .25)
 }
 
 .form-check-input.is-valid~.form-check-label,
@@ -3624,7 +3624,7 @@ fieldset:disabled .btn {
 
 .btn-check:focus+.btn-outline-success,
 .btn-outline-success:focus {
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .5)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .5)
 }
 
 .btn-check:active+.btn-outline-success,
@@ -3642,7 +3642,7 @@ fieldset:disabled .btn {
 .btn-outline-success.active:focus,
 .btn-outline-success.dropdown-toggle.show:focus,
 .btn-outline-success:active:focus {
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .5)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .5)
 }
 
 .btn-outline-success.disabled,
@@ -11656,7 +11656,7 @@ fieldset:disabled .btn {
     --bs-dark: #131313;
     --bs-primary-rgb: 67, 94, 190;
     --bs-secondary-rgb: 108, 117, 125;
-    --bs-success-rgb: 25, 135, 84;
+    --bs-success-rgb: 0, 133, 119;
     --bs-info-rgb: 13, 202, 240;
     --bs-warning-rgb: 255, 193, 7;
     --bs-danger-rgb: 220, 53, 69;
@@ -14750,7 +14750,7 @@ textarea.form-control-lg {
     margin-top: .1rem;
     font-size: .875rem;
     color: #fff;
-    background-color: rgba(25, 135, 84, .9);
+    background-color: rgba(0, 133, 119, .9);
     border-radius: .25rem
 }
 
@@ -14774,7 +14774,7 @@ textarea.form-control-lg {
 .was-validated .form-control:valid:focus,
 .form-control.is-valid:focus {
     border-color: #198754;
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .25)
 }
 
 .was-validated textarea.form-control:valid,
@@ -14801,7 +14801,7 @@ textarea.form-control.is-valid {
 .was-validated .form-select:valid:focus,
 .form-select.is-valid:focus {
     border-color: #198754;
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .25)
 }
 
 .was-validated .form-control-color:valid,
@@ -14821,7 +14821,7 @@ textarea.form-control.is-valid {
 
 .was-validated .form-check-input:valid:focus,
 .form-check-input.is-valid:focus {
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25)
+    box-shadow: 0 0 0 .25rem rgba(0, 133, 119, .25)
 }
 
 .was-validated .form-check-input:valid~.form-check-label,
@@ -15226,7 +15226,7 @@ fieldset:disabled .btn {
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #198754;
     --bs-btn-hover-border-color: #198754;
-    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-focus-shadow-rgb: 0, 133, 119;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #198754;
     --bs-btn-active-border-color: #198754;
@@ -35130,7 +35130,7 @@ body .bi:before,
 .pagination.pagination-success .page-item.active .page-link {
     background-color: #198754;
     border-color: #198754;
-    box-shadow: 0 2px 5px rgba(25, 135, 84, .3)
+    box-shadow: 0 2px 5px rgba(0, 133, 119, .3)
 }
 
 .pagination.pagination-info .page-item.active .page-link {

@@ -1,0 +1,25 @@
+<li class="col-3 list-unstyled" >
+    <a href="{% url "detail-question" object.pk %}" class="">
+        <div class="card p-3 hover-border-transition">
+            <div >
+                {{object.subject.icon|safe}}
+                <strong>{{object.subject}}</strong>
+            </div>
+            <div class="relative">
+                <div class="mt-2 text-sm " style="height: 150px; overflow: hidden;">
+                    <p>{{object.title}}</p>
+                    <p>{{object.content}}</p>
+                    
+                </div>
+                <div class="absolute bottom-0" style="height: 20px; transform: translateY(-20px); background: linear-gradient(#f8f9fa66, #fff);"></div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-message"></i>
+                {{object.answers|length}}
+            </div>
+            <div class="text-sm">
+                Feita por <strong>{{object.author}}</strong>
+            </div>
+        </div>
+    </a>
+</li>
