@@ -1,0 +1,36 @@
+<section class="card rounded-4 overflow-hidden border border-success border-2">
+    <div class="bg-light-success p-4 px-5 d-flex gap-4 align-items-center justify-content-between">
+        <div>
+            <i class="fa-solid fa-check-double"></i>
+
+            <strong>RESPOSTA MAIS VOTADA</strong>
+        </div>
+
+        {% if answer.votes.count > 1 %}
+            <small>{{answer.votes.count}} pessoas gostaram</small>
+            {% else %}
+            <small>{{answer.votes.count}} pessoa gostou</small>
+        {% endif %}
+    </div>
+    <div class="p-5">
+        {% include "questions/includes/avatar.html" with person=answer.author color="text-secondary" %}
+
+    <div class="my-4">
+        <h1></h1>
+        <p class="text-base">{{answer.content}}</p>
+    </div>
+
+    <div>
+        
+        <button 
+            class="btn font-bold d-flex gap-2 rounded-pill btn-secondary vote-btn" 
+            answer-id="{{answer.pk}}" 
+            vote-answer-url="{% url 'api:api-vote-answer' answer_id=answer.id vote_type="Upvote" %}"
+        >
+            <span><i class="fa-solid fa-heart"></i></span>
+            Obrigado
+            {{answer.votes.count}}
+        </button>
+    </div>
+    </div>
+</section>

@@ -57,7 +57,20 @@ class VoteAnswerAPIView(APIView):
             message = "Seu voto foi registrado."
         
         updated_score = answer.total_votes
+        
+        best_answer = answer.question.answers.filter(is_best_answer=True)
+        print(best_answer)
+        if best_answer.exists():
+            print(best_answer.get().total_votes, updated_score)
+            if best_answer.get().total_votes < updated_score:
+                best_answer.get().is_best_answer = False
+                answer.is_best_answer = True
+                best_answer.get().save()
+        else:
+            answer.is_best_answer = True
 
+        answer.save()
+        
         return Response(
             {
                 "status": "success",

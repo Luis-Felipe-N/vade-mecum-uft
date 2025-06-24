@@ -55,7 +55,7 @@ class Question(models.Model):
 
     def update_status(self):
         if self.answers.exists():
-            if self.answers.filter(is_best_answer=True).exists(): # Se tiver uma melhor resposta, assume-se que está fechada
+            if self.answers.filter(is_best_answer=True).exists():
                 self.status = 'closed'
             else:
                 self.status = 'answered'

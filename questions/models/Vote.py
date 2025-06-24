@@ -42,5 +42,5 @@ class Vote(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"{self.user.username} {self.get_vote_type_display()} em '{self.answer.content[:30]}...'"
+        return f"{self.author.full_name} {self.get_vote_type_display()} em '{self.answer.content[:30]}...'"
     

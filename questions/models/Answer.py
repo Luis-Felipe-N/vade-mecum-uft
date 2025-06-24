@@ -32,7 +32,7 @@ class Answer(models.Model):
     class Meta:
         verbose_name = "Resposta"
         verbose_name_plural = "Respostas"
-        ordering = ['created_at'] 
+        ordering = ['-is_best_answer', 'created_at'] 
 
     def __str__(self):
         return f"Resposta de {self.author.full_name} para '{self.question.title[:30]}...'"
@@ -42,7 +42,6 @@ class Answer(models.Model):
         return self.votes.filter(vote_type=1).count() - \
                self.votes.filter(vote_type=-1).count()
 
-    # Propriedade para garantir que apenas uma resposta pode ser a melhor
     def save(self, *args, **kwargs):
         if self.is_best_answer:
             Answer.objects.filter(question=self.question).exclude(pk=self.pk).update(is_best_answer=False)

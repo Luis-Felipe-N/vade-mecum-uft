@@ -1,9 +1,9 @@
 from django.contrib import admin
-from questions.models import Answer
+from questions.models import Vote
 
-@admin.register(Answer)
+@admin.register(Vote)
 class VoteAdmin(admin.ModelAdmin):
-    list_display = ('question', 'author', 'is_best_answer', 'created_at')
-    list_filter = ('is_best_answer', 'created_at')
-    search_fields = ('content',)
-    raw_id_fields = ('question', 'author')
+    list_display = ('answer', 'author', 'created_at')
+    list_filter = ( 'created_at',)
+    search_fields = ('answer',)
+    raw_id_fields = ('answer', 'author')
