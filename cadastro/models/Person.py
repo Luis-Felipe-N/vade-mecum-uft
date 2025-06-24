@@ -9,15 +9,14 @@ from questions.models import Subject
 
 User = get_user_model()
 
-GENDER_CHOICES = [
-        ('M', 'Masculino'),
-        ('F', 'Feminino'),
-        ('O', 'Outro'),
-        ('N', 'Prefiro não informar'),
-    ]
 
 class Person(models.Model):
-
+    GENDER_CHOICES = [
+            ('M', 'Masculino'),
+            ('F', 'Feminino'),
+            ('O', 'Outro'),
+            ('N', 'Prefiro não informar'),
+        ]
 
     user = models.OneToOneField(
         User,
