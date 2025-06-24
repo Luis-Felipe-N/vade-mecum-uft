@@ -14,7 +14,7 @@
             <form action="" class="mb-5">
 
                 <div class="d-flex w-3xl align-items-center bg-white rounded-pill">
-                    <input class="ps-5 fs-6 w-100 bg-transparent border-0 outline-0" type="text" name="question" placeholder="Ex: Alguém tem a prova de POO do semestre passado?" style="outline: none;">
+                    <input class="ps-5 fs-6 w-100 bg-transparent border-0 outline-0" type="text" name="q" value="{{request.GET.q}}" placeholder="Ex: Alguém tem a prova de POO do semestre passado?" style="outline: none;">
                     <div class="py-3 px-3">
                         <button class="border-0 bg-primary rounded-pill d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -28,6 +28,17 @@
             <ul class="row">
                 {% for object in object_list %}
                     {% include "questions/includes/questions.html" %}
+                {% empty %}
+                    <div class="text-center">
+                        <h1 class="text-secondary">Nenhuma pergunta foi encontrada</h1>
+                    <p>
+                        {% if request.GET.q %}
+                            Seja o primeiro a perguntar sobre <strong>"{{ request.GET.q }}"</strong>.
+                        {% else %}
+                            Seja o primeiro a fazer uma pergunta!
+                        {% endif %}
+                    </p>
+                    </div>
                 {% endfor %}
             </ul>
         </section>

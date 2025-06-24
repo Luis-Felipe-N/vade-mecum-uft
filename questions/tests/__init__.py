@@ -1,0 +1,1 @@
+from questions.tests.test_votes import VoteModelTest

@@ -184,7 +184,7 @@ input.invalid {
 }
 
 .hover-border-transition:hover {
-    box-shadow: #008577 1px 2px 0px 3px;
+    box-shadow: #008577 0px 0px 0px 2px;
     transition: .2s;
 }
 

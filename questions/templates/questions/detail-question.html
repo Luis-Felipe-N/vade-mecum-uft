@@ -14,6 +14,11 @@
                         <h1>{{object.title}}</h1>
                         <p>{{object.content}}</p>
                     </div>
+
+                    <form action="">
+
+
+                    </form>
                 </section>
                 <form id="csrf-token-form">{% csrf_token %}</form>
                 {% for answer in object.answers.all %}
@@ -25,16 +30,8 @@
                 {% endfor %}
             </div>
             <div class="col-4">
-                <section class="bg-secondary rounded-4">
-                    <div>
-                        <div class="avatar avatar-md2">
-                            {% comment %} <img style="object-fit: cover;" src="{{object.author.profile_picture.url}}" alt="Avatar"> {% endcomment %}
-                        </div>
-                        <div class="text">
-                            <h6 class="user-dropdown-name">{{object.author.full_name}}</h6>
-                            <p class="user-dropdown-status text-sm text-muted">{{object.author.students_enrolled}}</p>
-                        </div>
-                    </div>
+                <section class="bg-white border border-2 p-5 rounded-4">
+                    <h6 class="text-muted">Responder:</h6>
                 </section>
             </div>
         </div>

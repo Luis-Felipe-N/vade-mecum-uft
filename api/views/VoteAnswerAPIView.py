@@ -59,15 +59,17 @@ class VoteAnswerAPIView(APIView):
         updated_score = answer.total_votes
         
         best_answer = answer.question.answers.filter(is_best_answer=True)
-        print(best_answer)
+        best_answer_has_change = False
+        
         if best_answer.exists():
-            print(best_answer.get().total_votes, updated_score)
             if best_answer.get().total_votes < updated_score:
                 best_answer.get().is_best_answer = False
                 answer.is_best_answer = True
                 best_answer.get().save()
+                best_answer_has_change = True
         else:
             answer.is_best_answer = True
+            best_answer_has_change = True
 
         answer.save()
         
@@ -76,7 +78,8 @@ class VoteAnswerAPIView(APIView):
                 "status": "success",
                 "message": message,
                 "answer_id": answer.id,
-                "new_score": updated_score
+                "new_score": updated_score,
+                "best_answer_has_change": best_answer_has_change
             },
             status=status.HTTP_200_OK
         )

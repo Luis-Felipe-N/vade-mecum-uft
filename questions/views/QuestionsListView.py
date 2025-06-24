@@ -1,4 +1,5 @@
 from django.views.generic import ListView
+from django.db.models import Q
 #########################################
 from questions.models import Question
 
@@ -7,8 +8,18 @@ class QuestionsListView(ListView):
     model = Question
     template_name = 'questions/list-questions.html'
     
+    def get_queryset(self):
+        query = super().get_queryset()
+        
+        term = self.request.GET.get('q')
+        
+        if term:
+            query = query.filter(Q(Q(title__icontains=term) | Q(content__icontains=term)))
+        
+        return query
+    
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(self.request.user.person_profile)
         return context
     

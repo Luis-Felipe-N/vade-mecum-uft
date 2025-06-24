@@ -10,7 +10,7 @@
     <div>
         
         <button 
-            class="btn font-bold d-flex gap-2 rounded-pill btn-secondary vote-btn" 
+            class="btn font-bold d-flex align-items-center gap-2 rounded-pill btn-secondary vote-btn" 
             answer-id="{{answer.pk}}" 
             vote-answer-url="{% url 'api:api-vote-answer' answer_id=answer.id vote_type="Upvote" %}"
         >
