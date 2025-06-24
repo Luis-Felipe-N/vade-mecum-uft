@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+  Entrar
+{% endblock %}
+
+{% block content %}
+  <div id="auth">
+    <div class="row h-100 align-items-center justify-content-center">
+      <div class="col-lg-5 col-12 p-5">
+        <div id="auth-left">
+          <div class="auth-logo align-center">
+            <a href="{% url "indexSistema" %}"><img src="{% static 'img/logos/logo.svg' %}" alt="Logo" style="height: 50px;" /></a>
+          </div>
+          <h1 class="auth-title mt-4">Entrar.</h1>
+          <p class="auth-subtitle mb-5">Faça o login com seus dados que você digitou durante o registro.</p>
+
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show">
+                <strong>
+                  {% if message.level == 40 %} FALHA: {% endif %}
+                  {% if message.level == 30 %} AVISO: {% endif %}
+                  {% if message.level == 25 %} SUCESSO: {% endif %}
+                  {% if message.level == 20 %} INFORMAÇÃO: {% endif %}
+                </strong>
+                {{ message.message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          <form method="post" action="{% url 'cadastro:login' %}?next={{ request.GET.next }}">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+              <div class="input-group">
+                {% for error in form.non_field_errors %}
+                  <p class="text-white text-justify bg-danger p-3">{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <div class="form-floating mb-3">
+              <input type="text" id="login" name="username" class="form-control px-3" id="floatingInputUsername" placeholder="Usuário" autofocus>
+              {{ form.name.error_messages }}
+              <label class="px-3 text-muted" for="floatingInputUsername">Usuário</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="password" id="login" name="password" class="form-control px-3" id="floatingInputpassword" placeholder="Senha" autofocus>
+              {{ form.name.error_messages }}
+              <label class="px-3 text-muted" for="floatingInputpassword">Senha</label>
+            </div>
+
+            <button  type="submit" class="btn border-0 btn-primary btn-block btn-lg w-100 mt-5 fs-6 fw-bold py-3">Entrar</button>
+          </form>
+          <div class="text-center mt-5 text-sm">
+            <p class="text-gray-600">
+              Não possui uma conta?
+              {% comment %} <a href="{% url 'register' %}" class="font-bold">Faça seu cadastro</a>. {% endcomment %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
+{% block static_js_app %}
+{% endblock %}

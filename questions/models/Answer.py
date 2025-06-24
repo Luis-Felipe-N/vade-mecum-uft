@@ -35,7 +35,7 @@ class Answer(models.Model):
         ordering = ['created_at'] 
 
     def __str__(self):
-        return f"Resposta de {self.author.username} para '{self.question.title[:30]}...'"
+        return f"Resposta de {self.author.full_name} para '{self.question.title[:30]}...'"
 
     # Propriedade para garantir que apenas uma resposta pode ser a melhor
     def save(self, *args, **kwargs):

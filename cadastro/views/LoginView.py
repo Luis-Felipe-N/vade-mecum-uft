@@ -18,9 +18,9 @@ from django.views.generic import FormView, RedirectView
 
 
 class LoginView(FormView):
-    success_url = reverse_lazy('registraSessaoGeral')
+    success_url = reverse_lazy('indexSistema')
     form_class = AuthenticationForm
-    template_name = 'Login.html'
+    template_name = 'auth/login-view.html'
     redirect_authenticated_user = False	
 
     @method_decorator(sensitive_post_parameters())

@@ -27,20 +27,6 @@ UserModel = get_user_model()
 #########
 from django.views.generic import FormView, RedirectView
 
-##########
-
-
-
-class LogoutView(RedirectView):
-    """
-    Provides users the ability to logout
-    """
-    url = reverse_lazy('login')
-
-    def get(self, request, *args, **kwargs):
-        auth_logout(request)
-        return super(LogoutView, self).get(request, *args, **kwargs)
-
 class PasswordContextMixin:
     extra_context = None
 
@@ -75,7 +61,7 @@ class PasswordChangeView(PasswordContextMixin, FormView):
         # except the current one.
         update_session_auth_hash(self.request, form.user)
         return super().form_valid(form)
-    
+
 class PasswordContextMixin:
     extra_context = None
 
@@ -86,7 +72,6 @@ class PasswordContextMixin:
             **(self.extra_context or {})
         })
         return context
-
 
 class PasswordResetView(PasswordContextMixin, FormView):
     email_template_name = 'registrologin/password_reset_email.html'
@@ -118,15 +103,12 @@ class PasswordResetView(PasswordContextMixin, FormView):
         form.save(**opts)
         return super().form_valid(form)
 
-
 INTERNAL_RESET_SESSION_TOKEN = '_password_reset_token'
-
 
 class PasswordResetDoneView(PasswordContextMixin, TemplateView):
     template_name = 'registrologin/password_reset_done.html'
     title = ('Envio de alteração de senha')
-
-
+    
 class PasswordResetConfirmView(PasswordContextMixin, FormView):
     form_class = SetPasswordForm
     post_reset_login = False
@@ -199,7 +181,6 @@ class PasswordResetConfirmView(PasswordContextMixin, FormView):
             })
         return context
 
-
 class PasswordResetCompleteView(PasswordContextMixin, TemplateView):
     template_name = 'registrologin/password_reset_complete.html'
     title = ('Alteração de senha completa')
@@ -208,7 +189,6 @@ class PasswordResetCompleteView(PasswordContextMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context['login_url'] = resolve_url(settings.LOGIN_URL)
         return context
-
 
 class PasswordChangeView(PasswordContextMixin, FormView):
     form_class = PasswordChangeForm
@@ -233,7 +213,6 @@ class PasswordChangeView(PasswordContextMixin, FormView):
         # except the current one.
         update_session_auth_hash(self.request, form.user)
         return super().form_valid(form)
-
 
 class PasswordChangeDoneView(PasswordContextMixin, TemplateView):
     template_name = 'registrologin/password_change_done.html'
