@@ -43,3 +43,4 @@ class Vote(models.Model):
 
     def __str__(self):
         return f"{self.user.username} {self.get_vote_type_display()} em '{self.answer.content[:30]}...'"
+    

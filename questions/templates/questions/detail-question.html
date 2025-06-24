@@ -15,6 +15,7 @@
                         <p>{{object.content}}</p>
                     </div>
                 </section>
+                <form id="csrf-token-form">{% csrf_token %}</form>
                 {% for answer in object.answers.all %}
                     {% if answer.is_best_answer %}
                     <section class="card rounded-4 p-5 border border-success border-2">
@@ -27,9 +28,15 @@
                         </div>
 
                         <div>
-                            <button class="btn font-bold d-flex gap-2 rounded-pill btn-secondary">
+                            
+                            <button 
+                                class="btn font-bold d-flex gap-2 rounded-pill btn-secondary vote-btn" 
+                                answer-id="{{answer.pk}}" 
+                                vote-answer-url="{% url 'api:api-vote-answer' answer_id=answer.id vote_type="Upvote" %}"
+                            >
                                 <span><i class="fa-solid fa-heart"></i></span>
                                 Obrigado
+                                {{answer.votes.count}}
                             </button>
                         </div>
                     </section>
@@ -82,7 +89,7 @@
 {% endblock page_content %}
 
 {% block static_js_app %}
-   
+    <script src="{% static 'answer/javascript/vote-answer.js' %}"></script>
 {% endblock static_js_app %}
 
 {% block static_css_app %}

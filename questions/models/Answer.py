@@ -36,6 +36,11 @@ class Answer(models.Model):
 
     def __str__(self):
         return f"Resposta de {self.author.full_name} para '{self.question.title[:30]}...'"
+    
+    @property
+    def total_votes(self):
+        return self.votes.filter(vote_type=1).count() - \
+               self.votes.filter(vote_type=-1).count()
 
     # Propriedade para garantir que apenas uma resposta pode ser a melhor
     def save(self, *args, **kwargs):
