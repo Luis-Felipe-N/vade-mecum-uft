@@ -1,0 +1,20 @@
+
+   <div class="d-flex justify-content-center"> <button type="button" class="border-0 btn btn-primary rounded-5 py-3 font-bold px-5" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+    Tire sua dúvida
+</button></div>
+    <!-- Vertically Centered modal Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header px-4 border-0 pb-0">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Tire sua dúvida</h5>
+                    <button type="button" class="close text-primary" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fs-4 fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body px-4 text-start">
+                    {% include "questions/includes/form-question.html" %}
+                </div>
+            </div>
+        </div>
+    </div>

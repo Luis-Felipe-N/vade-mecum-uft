@@ -16,8 +16,7 @@
         {% include "questions/includes/avatar.html" with person=answer.author color="text-secondary" %}
 
     <div class="my-4">
-        <h1></h1>
-        <p class="text-base">{{answer.content}}</p>
+        <div class="editorjs-output">{{answer.content|safe}}</div>
     </div>
 
     <div>

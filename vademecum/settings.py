@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-OTHERS_APPS = []
+OTHERS_APPS = [
+    'rest_framework'
+]
 
 MY_APPS = [
     'questions',

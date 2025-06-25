@@ -1,8 +1,8 @@
 from django.views.generic import ListView
 from django.db.models import Q
 #########################################
-from questions.models import Question
-
+from questions.models import Question, Subject
+from questions.form import QuestionForm
 
 class QuestionsListView(ListView):
     model = Question
@@ -21,5 +21,7 @@ class QuestionsListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context["subjects"] = Subject.objects.all()
+        context["form"] = QuestionForm()
         return context
     

@@ -11,8 +11,7 @@
                     {% include "questions/includes/avatar.html" with person=object.author color="text-primary" %}
 
                     <div class="mt-4">
-                        <h1>{{object.title}}</h1>
-                        <p>{{object.content}}</p>
+                        <div class="editorjs-output">{{object.content|safe}}</div>
                     </div>
 
                     <form action="">
@@ -27,34 +26,24 @@
                     {% else %}
                         {% include "answers/includes/answer.html" %}
                     {% endif %}
+                    {% empty %}
+                    <div class="">
+                        <h1 class="text-center text-secondary">Ninguém respondeu :/</h1>
+                        <p class="text-center">
+                            
+                            Seja o primeiro a responder!
+                        </p>
+
+                    </div>
                 {% endfor %}
             </div>
             <div class="col-4">
-                <section class="bg-white border border-2 p-5 rounded-4">
+                <section class="bg-white border border-2 p-4 rounded-4">
                     <h6 class="text-muted">Responder:</h6>
+                    {% include "answers/includes/form-answer.html" %}
                 </section>
             </div>
         </div>
-
-        
-        {% comment %} <section class="bg-primary p-5 d-flex align-items-center flex-column">
-            <div class="text-center mt-5 container px-5 mx-5">
-                <h1 class="text-white">Qual sua duvida?</h1>
-                <p class="text-white-70 mt-3 mb-4 mx-5 px-5">No Vade Mecum UFT, sua pergunta encontra a resposta da comunidade. Seja uma dúvida sobre a matéria, uma questão de prova antiga ou um tópico desafiador, digite abaixo e conecte-se com seus colegas.
-                </p>
-            </div>
-            <form action="" class="mb-5">
-
-                <div class="d-flex w-3xl align-items-center bg-white rounded-pill">
-                    <input class="ps-5 fs-6 w-100 bg-transparent border-0 outline-0" type="text" name="question" placeholder="Ex: Alguém tem a prova de POO do semestre passado?" style="outline: none;">
-                    <div class="py-3 px-3">
-                        <button class="border-0 bg-primary rounded-pill d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </section> {% endcomment %}
 
         <section class="container mt-5">
             <ul class="row">
@@ -68,8 +57,13 @@
 
 {% block static_js_app %}
     <script src="{% static 'answer/javascript/vote-answer.js' %}"></script>
+    <script src="{% static 'questions/javascript/init-editor.js' %}"></script>
+    <script src="{% static 'questions/javascript/init-render.js' %}"></script>
+    <script src="{% static 'answer/javascript/create-answer.js' %}"></script>
 {% endblock static_js_app %}
-
+    
 {% block static_css_app %}
   
 {% endblock static_css_app %}
+
+

@@ -199,3 +199,21 @@ input.invalid {
 .btn-secondary {
     background: #008577 !important;
 }
+
+.focus-primary {
+    transition: .2s ease-in-out;
+}
+
+.focus-primary:focus-within {
+    box-shadow: 0 0 0 3px #c2d3ee, 0 0 0 6px #f2f7ff, 0 0 0 9px #004A80, 0 0 4px 12px #004b805d;
+}
+
+.focus-secondary:focus-within {
+    box-shadow: 0 0 0 3px #c2d3ee, 0 0 0 6px #f2f7ff, 0 0 0 9px #008577, 0 0 4px 12px #004b805d;
+}
+
+
+.codex-editor__redactor {
+    padding: 0px !important;
+    min-height: 200px;
+}

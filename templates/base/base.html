@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.svg' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'libs/choice/choice.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/filepond/index.css' %}">
+    
 
     {% block static_css_app %}{% endblock static_css_app %}
     {% block static_js_geral %}{% endblock %}
@@ -47,23 +48,39 @@
     <script src="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'assets/vendors/apexcharts/apexcharts.js' %}"></script>
+    <script src="{% static 'assets/vendors/toastify/toastify.js' %}"></script>
     <script src="{% static 'assets/js/mazer.js' %}"></script>
 
+    {% comment %} JQUERY {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="{% static 'libs/choice/choice.js' %}"></script>
 
-    {% if True %} <!-- VERFICAR SE TEM PERMISSÃO PARA TORNASE OUTRA PESSOA -->
-    <script src="{% static 'participantes/js/tornase.js' %}"></script>
-    {% endif %}
+    
+    {% comment %} FILES {% endcomment %}
+        <!-- include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
+    <!-- include FilePond library -->
+    <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+    <!-- include FilePond plugins -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+
+    <!-- include FilePond jQuery adapter -->
+    <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+    
+    {% comment %} EDITOR {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/editorjs-html@4.0.0/.build/edjsHTML.js"></script>
+    
     <script src="{% static 'js/index.js' %}"></script>
-
-    <script "type=text/javascript" src="{% static " js/qrcode.min.js" %}"></script>
-    <script src="{% static 'assets/vendors/filepond/index.js' %}"></script>
-
-    {% block static_js_app %}{% endblock static_js_app %}
+    {% block static_js_app %}{% endblock static_js_app %}   
 </body>
 
 </html>

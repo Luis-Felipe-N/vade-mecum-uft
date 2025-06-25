@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 ############################
 import os
 ############################
@@ -67,3 +68,7 @@ class Question(models.Model):
         if self.file_attachment:
             return os.path.basename(self.file_attachment.name)
         return None
+    
+    def get_absolute_url(self):
+        return reverse("detail-question", kwargs={"pk": self.pk})
+    

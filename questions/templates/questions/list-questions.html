@@ -29,26 +29,32 @@
                 {% for object in object_list %}
                     {% include "questions/includes/questions.html" %}
                 {% empty %}
-                    <div class="text-center">
-                        <h1 class="text-secondary">Nenhuma pergunta foi encontrada</h1>
-                    <p>
-                        {% if request.GET.q %}
-                            Seja o primeiro a perguntar sobre <strong>"{{ request.GET.q }}"</strong>.
-                        {% else %}
-                            Seja o primeiro a fazer uma pergunta!
-                        {% endif %}
-                    </p>
+                    <div class="">
+                        <h1 class="text-center text-secondary">Nenhuma pergunta foi encontrada</h1>
+                        <p class="text-center">
+                            {% if request.GET.q %}
+                                Seja o primeiro a perguntar sobre <strong>"{{ request.GET.q }}"</strong>.
+                            {% else %}
+                                Seja o primeiro a fazer uma pergunta!
+                            {% endif %}
+                        </p>
+
                     </div>
-                {% endfor %}
+                    {% endfor %}
+                    {% include "questions/includes/modal-create-question.html" %}
             </ul>
         </section>
     </main>
 {% endblock page_content %}
 
 {% block static_js_app %}
-   
+    {% if not object_list %}
+    <script src="{% static 'questions/javascript/init-file.js' %}"></script>
+    <script src="{% static 'questions/javascript/init-editor.js' %}"></script>
+    <script src="{% static 'questions/javascript/create-question.js' %}"></script>
+    {% endif %}
+    <script src="{% static 'questions/javascript/init-render.js' %}"></script>
 {% endblock static_js_app %}
 
 {% block static_css_app %}
-  
 {% endblock static_css_app %}

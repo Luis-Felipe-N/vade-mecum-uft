@@ -1,0 +1,11 @@
+<form method="post" accept="" id="answer-form" action="{% url "api:api-answer" %}">
+    {% csrf_token %}
+
+    <div class="form-group mb-4"  >
+        <div id="editorjs" class="bg-light p-4 rounded-5 focus-secondary" ></div>
+        {{ form.content }}         
+    </div>
+    <input type="hidden" name="questionId" value="{{object.pk}}">
+
+    <div class="d-flex justify-content-end"><button type="submit" class="btn btn-secondary rounded-5 py-3 w-100 font-bold px-5">Responder</button></div>
+</form>
